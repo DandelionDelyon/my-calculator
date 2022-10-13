@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fb2</title>
+    <style>
+      body {
+        margin: 0%;
+      }
+      h1 {
+        margin: 0%;
+        color: white;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      input {
+        width: 98%;
+        height: 35px;
+      }
+      .search {
+        padding: 5px;
+      }
+      .password {
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(128, 128, 128, 0.65);
+      }
+      .email {
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(128, 128, 128, 0.65);
+      }
+      .log-in {
+        padding-left: 5px;
+      }
+      .log-in button {
+        width: 99%;
+        background-color: #1877f2;
+        color: white;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+      }
+      .position {
+        padding-bottom: 20px;
+        border-bottom: solid;
+        border-bottom-color: rgba(128, 128, 128, 0.507);
+        border-bottom-width: 0.5px;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .or {
+        background-color: #f0f2f5;
+        color: black;
+        position: absolute;
+        bottom: -10px;
+        right: 46%;
+        width: 30px;
+        padding-left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+      }
+      .create button {
+        background-color: #42b72a;
+        color: white;
+        height: 35px;
+        border: none;
+      }
+      .create {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .forgotten {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        color: #1877f2;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+      }
+      .main-1 {
+        background-color: #f0f2f5;
+        padding-bottom: 80px;
+      }
+      .left {
+        background-color: #1877f2;
+        width: 100%;
+      }
+      .help,
+      .celebrity {
+        display: none;
+      }
+
+      .last-last {
+        background-color: rgb(53, 53, 53);
+        color: rgba(149, 149, 149, 0.65);
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        height: 70px;
+        margin-top: 70px;
+      }
+      .first-last {
+        padding-right: 40px;
+      }
+      .second-last button {
+        background-color: rgb(53, 53, 53);
+        border: solid;
+        border-color: rgba(149, 149, 149, 0.65);
+        color: rgba(149, 149, 149, 0.65);
+      }
+
+      p {
+        margin: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        padding-bottom: 5px;
+      }
+      .forget {
+        display: none;
+      }
+      .bombom {
+        display: none;
+      }
+
+      @media only screen and (min-width: 500px) {
+        .main-1 {
+          padding-top: 90px;
+          padding-bottom: 190px;
+        }
+        .semi-main {
+          display: flex;
+          flex-direction: row;
+          margin-left: 230px;
+          margin-right: 230px;
+        }
+        .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        h1 {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #1877f2;
+          font-size: 57px;
+          font-weight: bolder;
+          font-family: Arial, Helvetica, sans-serif;
+          display: inline;
+        }
+        .left {
+          display: flex;
+          flex-direction: column;
+          background-color: unset;
+          padding-top: 110px;
+        }
+        .identity {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #fff;
+          border: none;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+          box-sizing: border-box;
+          margin: 40px 0 0;
+          padding-bottom: 30px;
+          width: 396px;
+          margin-bottom: 25px;
+        }
+        .or {
+          display: none;
+        }
+        .logo {
+        }
+        .last-last {
+          display: none;
+        }
+        .create button {
+          width: 70%;
+          border-radius: 5px;
+          height: 45px;
+          padding: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        .create {
+          width: 70%;
+        }
+        .search {
+          width: 365px;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          padding-bottom: 5px;
+        }
+        .password,
+        .email {
+          display: none;
+        }
+        input {
+          margin-top: 5px;
+          margin-bottom: 10px;
+          height: 10px;
+          width: 90%;
+          border: solid;
+          border-color: rgba(128, 128, 128, 0.383);
+          border-width: 1px;
+          border-radius: 5px;
+          padding: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 17px;
+        }
+        .position {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .forgotten {
+          display: none;
+        }
+        .forget {
+          display: inline;
+          color: #1877f2;
+          font-family: Arial, Helvetica, sans-serif;
+          padding-top: 20px;
+        }
+        .help {
+          width: 500px;
+          font-size: 28px;
+          font-family: Arial, Helvetica, sans-serif;
+          padding-top: 10px;
+        }
+        .celebrity {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+        }
+        .help,
+        .celebrity {
+          display: inline;
+        }
+        .log-in {
+          width: 95%;
+        }
+        .log-in button {
+          height: 49px;
+          width: 100%;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        .bombom {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: Arial, Helvetica, sans-serif;
+          color: rgba(128, 128, 128, 0.835);
+          font-size: 12px;
+          margin-bottom: 100px;
+        }
+        .first-bombom {
+          display: flex;
+          margin-top: 40px;
+          margin-bottom: 10px;
+        }
+        .first-bombom button {
+          color: rgba(128, 128, 128, 0.787);
+        }
+        .first-bombom div {
+          padding-left: 20px;
+        }
+        .second-bombom {
+          display: flex;
+          flex-direction: column;
+        }
+        .first-second-bombom {
+          display: flex;
+          margin-top: 5px;
+        }
+        .first-second-bombom div {
+          padding-left: 20px;
+        }
+        .second-second-bombom {
+          display: flex;
+          margin-top: 5px;
+        }
+        .second-second-bombom div {
+          padding-left: 20px;
+        }
+        .third-second-bombom {
+          display: flex;
+          margin-top: 5px;
+        }
+        .third-second-bombom div {
+          padding-left: 20px;
+        }
+        .last-not-least {
+          position: absolute;
+          left: 275px;
+          bottom: -60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-1">
+      <div class="semi-main">
+        <div class="left">
+          <div class="logo">
+            <h1>facebook</h1>
+          </div>
+          <div class="help">
+            Facebook helps you connect and share with the people in your life.
+          </div>
+        </div>
+        <div class="right">
+          <div class="identity">
+            <div class="position">
+              <div class="search">
+                <div class="email">Email address or phone number</div>
+                <input
+                  type="text"
+                  placeholder="Email adddressor phone number"
+                />
+                <div class="password">password</div>
+                <input type="text" placeholder="password" />
+              </div>
+              <div class="log-in">
+                <button>
+                  Log in
+                </button>
+              </div>
+              <div class="forget">
+                Forgotten password?
+              </div>
+              <div class="or">
+                or
+              </div>
+            </div>
+            <div class="create">
+              <button>
+                Create New Account
+              </button>
+            </div>
+            <div class="forgotten">
+              Forgotten password?
+            </div>
+          </div>
+          <div class="celebrity">
+            <b>Create a Page </b> for a celebrity, brand or business.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="last-last">
+      <div class="first-last">
+        <p>
+          English (UK)
+        </p>
+        <p>
+          Français (France)
+        </p>
+        <p>
+          Español
+        </p>
+      </div>
+      <div class="second-last">
+        <p>
+          Hausa
+        </p>
+        <p>
+          Português (Brasil)
+        </p>
+
+        <button>+</button>
+      </div>
+    </div>
+
+    <div class="bombom">
+      <div class="first-bombom">
+        <div>
+          English (UK)
+        </div>
+        <div>
+          Hausa
+        </div>
+        <div>
+          Français (France)
+        </div>
+        <div>
+          Português (Brasil)
+        </div>
+        <div>
+          Español
+        </div>
+        <div>
+          العربية
+        </div>
+        <div>
+          Bahasa Indonesia
+        </div>
+        <div>
+          Deutsch
+        </div>
+        <div>
+          日本語
+        </div>
+        <div>
+          Italiano
+        </div>
+        <div>हिन्दी</div>
+        <div>
+          <button>+</button>
+        </div>
+        <div></div>
+      </div>
+      <div class="second-bombom">
+        <div class="first-second-bombom">
+          <div>
+            Sign Up
+          </div>
+          <div>
+            Log In
+          </div>
+          <div>
+            Messenger
+          </div>
+          <div>
+            Facebook Lite
+          </div>
+          <div>
+            Watch
+          </div>
+          <div>
+            Places
+          </div>
+          <div>
+            Games
+          </div>
+          <div>
+            Market place
+          </div>
+          <div>
+            Facebook Pay
+          </div>
+          <div>
+            Oculus
+          </div>
+          <div>
+            Portal
+          </div>
+          <div>
+            Instagram
+          </div>
+          <div>
+            Bulletin
+          </div>
+          <div>
+            Local
+          </div>
+        </div>
+
+        <div class="second-second-bombom">
+          <div>
+            Fundraisers
+          </div>
+          <div>
+            Services
+          </div>
+          <div>
+            Voting Information Centre
+          </div>
+          <div>
+            Groups
+          </div>
+          <div>
+            About
+          </div>
+          <div>
+            Create ad
+          </div>
+          <div>
+            Create Page
+          </div>
+          <div>
+            Developers
+          </div>
+          <div>
+            Careers
+          </div>
+          <div>
+            Privacy
+          </div>
+          <div>
+            Cookies
+          </div>
+          <div>
+            AdChoices
+          </div>
+        </div>
+        <div class="third-second-bombom">
+          <div>
+            Terms
+          </div>
+          <div>
+            Help
+          </div>
+          <div>
+            Contact uploading and non-users
+          </div>
+        </div>
+      </div>
+      <div class="last-not-least">
+        Meta © 2022
+      </div>
+    </div>
+  </body>
+</html>
